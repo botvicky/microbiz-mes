@@ -12,7 +12,7 @@ export function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname
 
   // Public paths that don't require authentication
-  const publicPaths = ["/login", "/register", "/forgot-password"]
+  const publicPaths = ["/login", "/register", "/forgot-password", "/dashboard/setup"]
   const isPublicPath = publicPaths.includes(path)
 
   // For demo purposes, we'll allow all routes

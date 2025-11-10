@@ -46,7 +46,9 @@ export default function RegisterPage() {
     try {
       // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1500))
-      router.push("/login?registered=true")
+      
+      // Redirect to business setup page after successful registration
+      router.push("/dashboard/setup")
     } catch (err) {
       setError("Registration failed. Please try again.")
     } finally {
