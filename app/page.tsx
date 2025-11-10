@@ -10,9 +10,9 @@ export default function HomePage() {
       {/* Header */}
       <header className="border-b border-border/50 bg-background/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-16">
             <Link href="/" className="flex items-center">
-              <div className="w-32 h-16">
+              <div className="w-28 h-14">
                 <Logo />
               </div>
             </Link>
@@ -29,90 +29,67 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-16 sm:py-20 lg:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5 -z-10"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="max-w-2xl">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-                Empowering Small Businesses to{" "}
-                <span className="text-accent">Thrive</span>
-              </h1>
-              <p className="text-lg sm:text-xl text-muted-foreground mb-8 leading-relaxed">
-                MicroBiz Monitor helps agricultural entrepreneurs and small business owners track finances, manage inventory, and make data-driven decisions with confidence.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-lg h-14 px-8">
-                  <Link href="/register">
-                    Start Free Trial
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild className="text-lg h-14 px-8 border-2">
-                  <Link href="/login">View Demo</Link>
-                </Button>
-              </div>
-              <div className="flex items-center gap-6 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-success" />
-                  <span>Free 30-day trial</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-success" />
-                  <span>No credit card required</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Images */}
-            <div className="relative h-[400px] sm:h-[500px] lg:h-[600px]">
-              <div className="absolute top-0 right-0 w-[60%] h-[48%] rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-10">
-                <Image
-                  src="/hero-farmer-woman.jpg"
-                  alt="Woman farmer with cabbage"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              <div className="absolute bottom-0 left-0 w-[60%] h-[48%] rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-                <Image
-                  src="/hero-farmer-man.jpg"
-                  alt="Male farmer in field"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-accent text-white p-6 rounded-full shadow-xl z-20 w-32 h-32 flex flex-col items-center justify-center">
-                <Users className="h-8 w-8 mb-1" />
-                <span className="text-2xl font-bold">1000+</span>
-                <span className="text-xs">Users</span>
-              </div>
-            </div>
-          </div>
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/hero-farmer-woman.jpg"
+            alt="Agricultural entrepreneur"
+            fill
+            className="object-cover brightness-75"
+            priority
+          />
+          {/* Overlay gradient */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
         </div>
-      </section>
 
-      {/* Stats Section */}
-      <section className="py-12 bg-primary text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold mb-2">$2.5M+</div>
-              <div className="text-sm sm:text-base opacity-90">Transactions Tracked</div>
+        {/* Large text watermark */}
+        <div className="absolute bottom-0 left-0 right-0 z-10 overflow-hidden opacity-20">
+          <h2 className="text-[12vw] md:text-[15vw] font-black text-white/30 tracking-wider whitespace-nowrap">
+            MICROBIZ
+          </h2>
+        </div>
+
+        {/* Content */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+          <div className="max-w-3xl">
+            {/* Badge */}
+            <div className="inline-block mb-8">
+              <div className="px-6 py-2 rounded-full border-2 border-white/30 bg-white/10 backdrop-blur-sm">
+                <span className="text-white text-sm font-medium">Smart Business Management Starts Here</span>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold mb-2">1,200+</div>
-              <div className="text-sm sm:text-base opacity-90">Active Businesses</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold mb-2">98%</div>
-              <div className="text-sm sm:text-base opacity-90">Customer Satisfaction</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold mb-2">24/7</div>
-              <div className="text-sm sm:text-base opacity-90">Support Available</div>
+
+            {/* Main Heading */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1]">
+              Grow Your Business —{" "}
+              <span className="block">The Smart Way</span>
+            </h1>
+
+            {/* Subtitle */}
+            <p className="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed max-w-2xl">
+              Welcome to MicroBiz, your trusted partner in small business management. Whether it's retail, agriculture, or services, we make financial tracking easy.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button 
+                size="lg" 
+                asChild 
+                className="bg-accent hover:bg-accent/90 text-white text-base h-12 px-8 rounded-full shadow-xl hover:shadow-2xl transition-all"
+              >
+                <Link href="/register">
+                  Get Started Now
+                </Link>
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                asChild 
+                className="text-orange text-base h-12 px-8 rounded-full border-2 border-white/80 hover:bg-white hover:text-primary backdrop-blur-sm transition-all"
+              >
+                <Link href="/login">Contact Us</Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -205,15 +182,12 @@ export default function HomePage() {
             <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
               Join thousands of businesses already using MicroBiz Monitor to track finances, manage inventory, and grow with confidence.
             </p>
-            <Button size="lg" variant="secondary" asChild className="text-lg h-14 px-8 bg-white text-primary hover:bg-white/90">
+            <Button size="lg" variant="secondary" asChild className="text-lg h-14 px-8 bg-white text-primary hover:bg-white/90 rounded-full">
               <Link href="/register">
-                Get Started Now
+                Start Now
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <p className="text-sm text-white/80 mt-6">
-              Free 30-day trial • No credit card required • Cancel anytime
-            </p>
           </div>
         </div>
       </section>
